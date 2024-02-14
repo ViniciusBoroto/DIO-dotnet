@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploFundamentos", "ExemploFundamentos\ExemploFundamentos.csproj", "{EB00ECB6-1C18-488F-9B73-B36C449F52F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploFundamentos.Common", "ExemploFundamentos.Common\ExemploFundamentos.Common.csproj", "{BFCCF365-B7D9-446E-8710-D70A6E32DACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB00ECB6-1C18-488F-9B73-B36C449F52F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB00ECB6-1C18-488F-9B73-B36C449F52F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB00ECB6-1C18-488F-9B73-B36C449F52F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB00ECB6-1C18-488F-9B73-B36C449F52F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFCCF365-B7D9-446E-8710-D70A6E32DACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFCCF365-B7D9-446E-8710-D70A6E32DACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFCCF365-B7D9-446E-8710-D70A6E32DACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFCCF365-B7D9-446E-8710-D70A6E32DACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
