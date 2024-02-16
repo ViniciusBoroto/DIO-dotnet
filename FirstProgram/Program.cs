@@ -1,4 +1,8 @@
-﻿using Models;
-
-Pessoa pessoa = new Pessoa("Vinícius", 17);
-pessoa.Apresentar();
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int tel = 12341234;
+        Console.WriteLine(tel.ToString("####-####"));
+    }
+}
