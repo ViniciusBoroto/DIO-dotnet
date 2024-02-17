@@ -1,0 +1,15 @@
+D:\dev\DIODotnet\DesafioSandbox\bin\Debug\net8.0\DesafioSandbox.exe
+D:\dev\DIODotnet\DesafioSandbox\bin\Debug\net8.0\DesafioSandbox.deps.json
+D:\dev\DIODotnet\DesafioSandbox\bin\Debug\net8.0\DesafioSandbox.runtimeconfig.json
+D:\dev\DIODotnet\DesafioSandbox\bin\Debug\net8.0\DesafioSandbox.dll
+D:\dev\DIODotnet\DesafioSandbox\bin\Debug\net8.0\DesafioSandbox.pdb
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.AssemblyInfoInputs.cache
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.AssemblyInfo.cs
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.csproj.CoreCompileInputs.cache
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.sourcelink.json
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.dll
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\refint\DesafioSandbox.dll
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.pdb
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\DesafioSandbox.genruntimeconfig.cache
+D:\dev\DIODotnet\DesafioSandbox\obj\Debug\net8.0\ref\DesafioSandbox.dll
