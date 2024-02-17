@@ -1,6 +1,18 @@
-﻿using Models;
-using Newtonsoft.Json;
+﻿using System;
 
-Venda v1 = new Venda(1, "Material de escritório", 25.00M);
+class MinhaClasse
+{
+    static void Main(string[] args)
+    {
+        int.TryParse(Console.ReadLine(), out int timeInSeconds);
+        //TODO: Implementar a formula para calcular as horas.
+        var hours = (int)timeInSeconds / 3600;
+        timeInSeconds = timeInSeconds % (hours * 3600);
+        //TODO: Implementar a formula para calcular as horas.
+        var minutes = (int)timeInSeconds / 60;
+        var seconds = timeInSeconds % 60;
 
-string serializado = JsonConvert.SerializeObject(v1);
+        Console.WriteLine($"{hours}:{minutes}:{seconds}");
+
+    }
+}

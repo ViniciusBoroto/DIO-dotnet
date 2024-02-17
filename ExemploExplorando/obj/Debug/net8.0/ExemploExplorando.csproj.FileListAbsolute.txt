@@ -1,0 +1,6 @@
+D:\dev\DIODotnet\ExemploExplorando\obj\Debug\net8.0\ExemploExplorando.csproj.AssemblyReference.cache
+D:\dev\DIODotnet\ExemploExplorando\obj\Debug\net8.0\ExemploExplorando.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\DIODotnet\ExemploExplorando\obj\Debug\net8.0\ExemploExplorando.AssemblyInfoInputs.cache
+D:\dev\DIODotnet\ExemploExplorando\obj\Debug\net8.0\ExemploExplorando.AssemblyInfo.cs
+D:\dev\DIODotnet\ExemploExplorando\obj\Debug\net8.0\ExemploExplorando.csproj.CoreCompileInputs.cache
+D:\dev\DIODotnet\ExemploExplorando\obj\Debug\net8.0\ExemploExplorando.sourcelink.json
