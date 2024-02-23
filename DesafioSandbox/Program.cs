@@ -1,19 +1,25 @@
 ﻿using System;
 
-class MinhaClasse
+//TODO: Complete os espaços em branco com uma possível solução para o problema.
+class Desafio
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        int.TryParse(Console.ReadLine(), out int timeInSeconds);
-        // int timeInSeconds = 556;
-        //TODO: Implementar a formula para calcular as horas.
-        var hours = (int)Math.Floor(timeInSeconds / 3600.00);
-        timeInSeconds = timeInSeconds % 3600;
-        //TODO: Implementar a formula para calcular os minutos.
-        var minutes = (int)Math.Floor(timeInSeconds / 60.00);
-        var seconds = timeInSeconds % 60;
-
-        Console.WriteLine($"{hours}:{minutes}:{seconds}");
-
+        Int32.TryParse(Console.ReadLine(), out int limit);
+        for (int i = 0; i < limit; i++)
+        {
+            string[] line = Console.ReadLine().Split(" ");
+            double X = double.Parse(line[0]);
+            double Y = double.Parse(line[1]);
+            if (Y != 0.0)
+            {
+                double r = X / Y;
+                Console.WriteLine(r);
+            }
+            else
+            {
+                Console.WriteLine("divisao imposivel");
+            }
+        }
     }
 }
