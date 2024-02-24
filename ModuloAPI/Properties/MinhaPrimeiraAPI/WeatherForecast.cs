@@ -1,3 +1,5 @@
+using System;
+
 namespace MinhaPrimeiraAPI
 {
     public class WeatherForecast
@@ -11,3 +13,4 @@ namespace MinhaPrimeiraAPI
         public string? Summary { get; set; }
     }
 }
+s
