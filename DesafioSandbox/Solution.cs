@@ -4,72 +4,40 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
-namespace DesafioSandbox.Solution
+
+public class Solution
 {
-    public class Solution
+    public static int LengthOfLongestSubstring(string s)
     {
-
-        public static int MyAtoi(string s)
+        char[] chars = s.ToCharArray();
+        List<char> aux = new List<char>();
+        int currValue = 0;
+        bool isStart = true;
+        int start = 0;
+        for (int i = 0; i < chars.Count(); i++)
         {
-            string res = "";
-            bool numStart = false;
-            bool negative = false;
-            for (int i = 0; i < s.Length; i++)
+            if (aux.Contains(chars[i]))
             {
-                bool parsed = int.TryParse(s[i].ToString(), out int num);
-                if (parsed) { numStart = true; }
-                // Caso esteja no começo e não seja um número
-                if (!numStart)
+                if (aux.Count > currValue)
                 {
-                    if (s[i] == ' ') { continue; }
-                    if (s[i] == '+') { numStart = true; continue; }
-                    else if (s[i] == '-') { negative = true; numStart = true; continue; }
-                    else { break; }
+                    currValue = aux.Count;
                 }
-                if (!parsed) { break; }
-                res += num.ToString();
+                aux.Clear();
+                i = start;
+                isStart = true;
+                continue;
             }
-            if (res == "") { return 0; }
-            bool intParsed = int.TryParse(res, out int intRes);
-            if (!intParsed)
+            if (isStart)
             {
-                return (negative ? int.MinValue : int.MaxValue);
+                start = i;
             }
-            return intRes * (negative ? -1 : 1);
-
-
-
-
-
-            // string res = "";
-            // int signal = 0;
-            // for (int i = 0; i < s.Length && signal < 2; i++)
-            // {
-            //     int.TryParse(s[i].ToString(), out int c);
-            //     if (c != 0)
-            //     {
-            //         res += s[i];
-            //     }
-            //     else if (s[i] == '-')
-            //     {
-            //         signal++;
-            //     }
-            //     else if (s[i] == ' ' || s[i] == '+')
-            //     {
-            //         continue;
-            //     }
-            //     else
-            //     {
-            //         break;
-            //     }
-            // }
-            // if (res == "") { return 0; }
-            // if (long.Parse(res) > (long)int.MaxValue)
-            // {
-            //     if (signal % 2 == 0) { return int.MaxValue; }
-            //     return int.MinValue;
-            // }
-            // return int.Parse(res) * (signal % 2 == 0 ? 1 : -1);
+            isStart = false;
+            aux.Add(chars[i]);
         }
+        if (aux.Count > currValue)
+        {
+            currValue = aux.Count;
+        }
+        return currValue;
     }
 }
