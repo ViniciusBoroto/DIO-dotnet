@@ -1,3 +1,3 @@
 ﻿using System.Runtime.InteropServices;
 
-Console.WriteLine(Solution.LongestPalindrome("babad"));
+Solution.RemoveDuplicates([1, 1, 2]);

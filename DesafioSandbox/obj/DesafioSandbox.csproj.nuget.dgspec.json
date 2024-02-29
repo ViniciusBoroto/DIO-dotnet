@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\DIO-dotnet\\DesafioSandbox\\DesafioSandbox.csproj": {}
+    "D:\\dev\\DIODotnet\\DesafioSandbox\\DesafioSandbox.csproj": {}
   },
   "projects": {
-    "C:\\dev\\DIO-dotnet\\DesafioSandbox\\DesafioSandbox.csproj": {
+    "D:\\dev\\DIODotnet\\DesafioSandbox\\DesafioSandbox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\DIO-dotnet\\DesafioSandbox\\DesafioSandbox.csproj",
+        "projectUniqueName": "D:\\dev\\DIODotnet\\DesafioSandbox\\DesafioSandbox.csproj",
         "projectName": "DesafioSandbox",
-        "projectPath": "C:\\dev\\DIO-dotnet\\DesafioSandbox\\DesafioSandbox.csproj",
-        "packagesPath": "C:\\Users\\vinicius\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\DIO-dotnet\\DesafioSandbox\\obj\\",
+        "projectPath": "D:\\dev\\DIODotnet\\DesafioSandbox\\DesafioSandbox.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "D:\\dev\\DIODotnet\\DesafioSandbox\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vinicius\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

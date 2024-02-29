@@ -1,61 +1,32 @@
-using System.Linq;
+using System.Reflection.Metadata;
+
 public class Solution
 {
-    public static string LongestPalindrome(string s)
+    public static int RemoveDuplicates(int[] nums)
     {
-        string res = "";
-        //caso ache uma letra repetida
-        char[] chars = s.ToCharArray();
-        for (int i = 0; i < chars.Length; i++)
+        int joker = nums[0] - 1;
+        int reps = 0;
+        for (int i = 1; i < nums.Length; i++)
         {
-            List<int> rep = FindRepeated(chars, i);
-            if (rep.Any())
+            if (nums[i] == joker) { continue; }
+            if (nums[i] == nums[i - 1])
             {
-                for (int item = rep.Count - 1; item >= 0; item--)
+                nums[i] = joker;
+                reps++;
+            }
+        }
+        if (reps == 0) { return nums.Length; }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == joker)
+            {
+                for (int j = i; j < nums.Length - 1 && nums[j + 1] != joker; j++)
                 {
-                    //Pega cada substring entre duas repetições e se caso seja palíndromo e seu tamanho seja maior que res, ele substitui res.
-                    var currSubstring = chars.ToList<char>().Skip(i).Take(rep[item] - i + 1).ToArray();
-                    if (isPalindrome(currSubstring))
-                    {
-                        string str = new string(currSubstring);
-                        if (str.Length > res.Length) { res = str; }
-                        break;
-                    }
+                    nums[i] = nums[i + 1];
+                    nums[i + 1] = joker;
                 }
-
             }
         }
-        if (res == "") { return chars[0].ToString(); }
-        return res;
-    }
-    private static bool isPalindrome(char[] chars)
-    {
-        int leng;
-        if (chars.Length % 2 == 1)
-        {
-            leng = (chars.Length - 1) / 2;
-        }
-        else { leng = chars.Length / 2; }
-        for (int i = 0; i < leng; i++)
-        {
-            if (chars[i] != chars[^(i + 1)])
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    private static List<int> FindRepeated(char[] chars, int Index)
-    {
-        char c = chars[Index];
-        List<int> res = new List<int>();
-        for (int i = Index + 1; i < chars.Length; i++)
-        {
-            if (chars[i] == c)
-            {
-                res.Add(i);
-            }
-        }
-        return res;
+        return nums.Length - reps;
     }
 }
