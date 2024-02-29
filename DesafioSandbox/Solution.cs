@@ -1,75 +1,61 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
-
-namespace DesafioSandbox.Solution
+public class Solution
 {
-    public class Solution
+    public static string LongestPalindrome(string s)
     {
-
-        public static int MyAtoi(string s)
+        string res = "";
+        //caso ache uma letra repetida
+        char[] chars = s.ToCharArray();
+        for (int i = 0; i < chars.Length; i++)
         {
-            string res = "";
-            bool numStart = false;
-            bool negative = false;
-            for (int i = 0; i < s.Length; i++)
+            List<int> rep = FindRepeated(chars, i);
+            if (rep.Any())
             {
-                bool parsed = int.TryParse(s[i].ToString(), out int num);
-                if (parsed) { numStart = true; }
-                // Caso esteja no começo e não seja um número
-                if (!numStart)
+                for (int item = rep.Count - 1; item >= 0; item--)
                 {
-                    if (s[i] == ' ') { continue; }
-                    if (s[i] == '+') { numStart = true; continue; }
-                    else if (s[i] == '-') { negative = true; numStart = true; continue; }
-                    else { break; }
+                    //Pega cada substring entre duas repetições e se caso seja palíndromo e seu tamanho seja maior que res, ele substitui res.
+                    var currSubstring = chars.ToList<char>().Skip(i).Take(rep[item] - i + 1).ToArray();
+                    if (isPalindrome(currSubstring))
+                    {
+                        string str = new string(currSubstring);
+                        if (str.Length > res.Length) { res = str; }
+                        break;
+                    }
                 }
-                if (!parsed) { break; }
-                res += num.ToString();
+
             }
-            if (res == "") { return 0; }
-            bool intParsed = int.TryParse(res, out int intRes);
-            if (!intParsed)
-            {
-                return (negative ? int.MinValue : int.MaxValue);
-            }
-            return intRes * (negative ? -1 : 1);
-
-
-
-
-
-            // string res = "";
-            // int signal = 0;
-            // for (int i = 0; i < s.Length && signal < 2; i++)
-            // {
-            //     int.TryParse(s[i].ToString(), out int c);
-            //     if (c != 0)
-            //     {
-            //         res += s[i];
-            //     }
-            //     else if (s[i] == '-')
-            //     {
-            //         signal++;
-            //     }
-            //     else if (s[i] == ' ' || s[i] == '+')
-            //     {
-            //         continue;
-            //     }
-            //     else
-            //     {
-            //         break;
-            //     }
-            // }
-            // if (res == "") { return 0; }
-            // if (long.Parse(res) > (long)int.MaxValue)
-            // {
-            //     if (signal % 2 == 0) { return int.MaxValue; }
-            //     return int.MinValue;
-            // }
-            // return int.Parse(res) * (signal % 2 == 0 ? 1 : -1);
         }
+        if (res == "") { return chars[0].ToString(); }
+        return res;
+    }
+    private static bool isPalindrome(char[] chars)
+    {
+        int leng;
+        if (chars.Length % 2 == 1)
+        {
+            leng = (chars.Length - 1) / 2;
+        }
+        else { leng = chars.Length / 2; }
+        for (int i = 0; i < leng; i++)
+        {
+            if (chars[i] != chars[^(i + 1)])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    private static List<int> FindRepeated(char[] chars, int Index)
+    {
+        char c = chars[Index];
+        List<int> res = new List<int>();
+        for (int i = Index + 1; i < chars.Length; i++)
+        {
+            if (chars[i] == c)
+            {
+                res.Add(i);
+            }
+        }
+        return res;
     }
 }
