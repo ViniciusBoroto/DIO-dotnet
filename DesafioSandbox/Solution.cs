@@ -1,43 +1,61 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
-
-
 public class Solution
 {
-    public static int LengthOfLongestSubstring(string s)
+    public static string LongestPalindrome(string s)
     {
+        string res = "";
+        //caso ache uma letra repetida
         char[] chars = s.ToCharArray();
-        List<char> aux = new List<char>();
-        int currValue = 0;
-        bool isStart = true;
-        int start = 0;
-        for (int i = 0; i < chars.Count(); i++)
+        for (int i = 0; i < chars.Length; i++)
         {
-            if (aux.Contains(chars[i]))
+            List<int> rep = FindRepeated(chars, i);
+            if (rep.Any())
             {
-                if (aux.Count > currValue)
+                for (int item = rep.Count - 1; item >= 0; item--)
                 {
-                    currValue = aux.Count;
+                    //Pega cada substring entre duas repetições e se caso seja palíndromo e seu tamanho seja maior que res, ele substitui res.
+                    var currSubstring = chars.ToList<char>().Skip(i).Take(rep[item] - i + 1).ToArray();
+                    if (isPalindrome(currSubstring))
+                    {
+                        string str = new string(currSubstring);
+                        if (str.Length > res.Length) { res = str; }
+                        break;
+                    }
                 }
-                aux.Clear();
-                i = start;
-                isStart = true;
-                continue;
+
             }
-            if (isStart)
-            {
-                start = i;
-            }
-            isStart = false;
-            aux.Add(chars[i]);
         }
-        if (aux.Count > currValue)
+        if (res == "") { return chars[0].ToString(); }
+        return res;
+    }
+    private static bool isPalindrome(char[] chars)
+    {
+        int leng;
+        if (chars.Length % 2 == 1)
         {
-            currValue = aux.Count;
+            leng = (chars.Length - 1) / 2;
         }
-        return currValue;
+        else { leng = chars.Length / 2; }
+        for (int i = 0; i < leng; i++)
+        {
+            if (chars[i] != chars[^(i + 1)])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    private static List<int> FindRepeated(char[] chars, int Index)
+    {
+        char c = chars[Index];
+        List<int> res = new List<int>();
+        for (int i = Index + 1; i < chars.Length; i++)
+        {
+            if (chars[i] == c)
+            {
+                res.Add(i);
+            }
+        }
+        return res;
     }
 }

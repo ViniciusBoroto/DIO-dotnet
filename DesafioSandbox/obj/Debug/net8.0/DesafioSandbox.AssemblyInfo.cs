@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesafioSandbox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28dc755a8ec74b02f26814aeab01ad50a606eba0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff1d3996eb83e3786afc53a80c6f81454de91595")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesafioSandbox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesafioSandbox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

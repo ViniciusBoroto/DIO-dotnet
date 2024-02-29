@@ -1,3 +1,3 @@
 ﻿using System.Runtime.InteropServices;
 
-Console.WriteLine(Solution.LengthOfLongestSubstring("dvdf"));
+Console.WriteLine(Solution.LongestPalindrome("babad"));
