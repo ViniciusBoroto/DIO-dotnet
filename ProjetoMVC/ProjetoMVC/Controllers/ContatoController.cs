@@ -18,7 +18,7 @@ namespace ProjetoMVC.Controllers
             return View(contatos);
         }
 
-        public IActionResult Criar() 
+        public IActionResult Criar()
         {
             return View();
         }
@@ -32,6 +32,16 @@ namespace ProjetoMVC.Controllers
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
+            return View(contato);
+        }
+
+        public IActionResult Editar(int id)
+        {
+            var contato = _context.Contatos.Find(id);
+
+            if (contato == null)
+                return RedirectToAction(nameof(Index));
+
             return View(contato);
         }
     }
